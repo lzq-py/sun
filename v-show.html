@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="add">
+    <h3 v-show="true">{{msg}}</h3>
+    <h3 v-show="shg" @click="sh">上课一定好好听课</h3>
+</div>
+
+<script>
+    new Vue({
+        el: "#add",
+        data: {
+            msg:"上课一定好好听课",
+            shg:true
+        },
+        methods:{
+            sh(){
+                this.shg=!this.shg
+            }
+        }
+    })
+</script>
+</body>
+</html>

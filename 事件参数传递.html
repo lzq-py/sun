@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="add">
+    {{count}}
+    <input type="button" value="修改count值" @click="con(80)">
+</div>
+
+<script>
+    new Vue({
+        el: "#add",
+        data: {
+            count:40,
+        },
+        methods:{
+            con(t){
+                this.count=t
+            }
+        }
+    })
+</script>
+</body>
+</html>

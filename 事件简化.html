@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="add">
+    {{age}}
+    <input type="button" value="ok" v-on:click="change"> <br>
+    <input type="button" value="oks" @click="changs">
+</div>
+
+<script>
+    new Vue({
+        el: "#add",
+        data: {
+            age : 50,
+        },
+        methods:{
+            change:function () {
+                this.age++;
+            },
+            changs(){
+                 this.age--;
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="add">
+    <input type="text" v-model="msg"><br>
+    <input type="button" value="添加留言" @click="book">
+    <ul>
+        <li v-for="(value,key) in notebook" :key="key">
+            <span>{{value}}</span><a href="javascript:" @click="dels(key)">删除留言</a>
+        </li>
+    </ul>
+    <span>总数量：{{notebook.length}}</span>
+    <input type="button" value="清空留言板" @click="delall" v-show="notebook.length!=0">
+</div>
+
+<script>
+    new Vue({
+        el: "#add",
+        data: {
+            msg:"",
+            notebook:[],
+        },
+        methods:{
+            book(){
+                if (this.msg){
+                // this.notebook.push(this.msg)
+                this.notebook.unshift(this.msg)
+                this.msg=""
+            }},
+            dels(key){
+                console.log(key);
+                this.notebook.splice(key,1)
+            },
+            delall(){
+                this.notebook =""
+            }
+        }
+    })
+</script>
+</body>
+</html>

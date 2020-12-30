@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="add">
+
+    年龄：<span>{{age}}</span> <br>
+    <input type="button" value="点我变得更年轻" v-on:click="adds">
+</div>
+
+<script>
+    new Vue({
+        el: "#add",
+        data: {
+            age : 30,
+            ssg:'<a href="">点我</a>'
+        },
+        methods:{
+            adds:function () {
+                this.age = this.age +2;
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

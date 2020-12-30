@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="add">
+    <h2>{{user.age}},{{user.money}}</h2>
+    <span v-for="(value,key,index) in user">{{value}},{{key}},{{index}} <br></span>
+    <ul>
+        <li v-for="(city,index) in arr" key="index">{{city}},{{index +1}} </li>
+    </ul>
+</div>
+
+<script>
+    new Vue({
+        el: "#add",
+        data: {
+            user:{name:"xx",age:18,money:2000},
+            arr:["河南","山东","东北"]
+        },
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+
+<div id="add">
+    <h2>{{name}}</h2>
+    <h2>{{user.pwd}}</h2>
+    <h2 style="color: aqua">{{username}}</h2>
+    年龄：{{age + 2}}
+    {{arr[0]}}
+    {{userlist[1].names}}
+
+</div>
+
+<script>
+    new Vue({
+        el: "#add",
+        data: {
+            name: "hello vue",
+            age: 18,
+            username: "百知教育",
+            user: {"names": "小白", "pwd": 123456},
+            arr: ["北京","上海","南京"],
+            userlist:[
+                {"names": "小白", "pwd": 123456},
+                {"names": "小黑", "pwd": 120006},
+            ]
+        },
+
+    })
+</script>
+</body>
+</html>

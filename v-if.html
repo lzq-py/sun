@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="add">
+    <h3 v-if="isshow" >上课一定好好听课</h3>
+    <h3 v-else>好好听课</h3>
+    <input type="button" value="ok" @click="ifs">
+</div>
+
+<script>
+    new Vue({
+        el: "#add",
+        data: {
+            isshow:true
+        },
+        methods:{
+            ifs(){
+                this.isshow =!this.isshow
+            }
+        }
+    })
+</script>
+</body>
+</html>
