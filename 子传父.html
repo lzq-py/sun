@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="add">
+    父组件username：{{username}}
+    <com @btn="clickme"></com>
+</div>
+
+<script>
+    let com = {
+        template:`<div>子组件 <button @click="cli">按钮</button></div>`,
+        methods:{
+            cli: function (){
+                this.$emit("btn",this.name)
+            }
+        },
+        data: function () {
+            return {
+                name:"百知教育",
+            }
+        }
+    }
+    new Vue({
+        el: "#add",
+        data: {
+            username:'xx'
+
+        },methods: {
+            clickme(username){
+                this.username = username
+            }
+
+        },
+        components:{
+            com:com
+        }
+    })
+</script>
+</body>
+</html>

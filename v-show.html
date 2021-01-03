@@ -9,6 +9,7 @@
 <div id="add">
     <h3 v-show="true">{{msg}}</h3>
     <h3 v-show="shg" @click="sh">上课一定好好听课</h3>
+
 </div>
 
 <script>
@@ -16,7 +17,7 @@
         el: "#add",
         data: {
             msg:"上课一定好好听课",
-            shg:falsa
+            shg:true
         },
         methods:{
             sh(){

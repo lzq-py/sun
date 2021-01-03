@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<style>
+    .tops{
+        color: aqua;
+    }
+
+</style>
+<body>
+<div id="add">
+   <sec user="name" color="tops"></sec>
+    <first></first>
+</div>
+<sec></sec>
+<script>
+    let sec = {
+        template:`<div :class="color">这时first组件,</div>`,
+        props:['user','color'],
+        create:function (){
+
+        }
+    }
+    let first = {
+        template: ` <div>这时sec组件</div>`
+    }
+    Vue.component('first',first)
+    new Vue({
+        el: "#add",
+        data: {
+
+
+        },
+        components:{
+        "sec":sec }
+    })
+</script>
+</body>
+</html>

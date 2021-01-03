@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<span id="span" @click="number"> sdasdafadada+{{count}}</span>
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            count:50,
+        },
+        methods:{
+            number(){
+                this.count++
+            }
+        },
+        beforeCreate:function (){
+            console.log('beforCreate' +':'+ this.count)
+        },
+        created:function (){
+            console.log('created' +':'+ this.count)
+        },
+        beforeMount:function (){
+            console.log('beforeMount' +"+"+document.getElementById('span').innerText)
+        },
+        mounted:function (){
+            console.log('beforeMount' +"+"+document.getElementById('span').innerText)
+        },
+        beforeUpdate:function (){
+            // console.log("beforUpdate"+this.count)
+            // console.log("beforUpdate"+document.getElementById("span").innerText)
+        },
+        updated:function (){
+            console.log("updated"+this.count)
+            console.log("updated"+document.getElementById("span").innerText)
+        },
+        beforeDestroy:function (){
+
+        },
+        destroy:function(){
+
+        }
+    })
+</script>
+</body>
+</html>

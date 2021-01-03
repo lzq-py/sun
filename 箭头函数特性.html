@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let user = {
+        username:"xxxx",
+        app:function (){
+            console.log(this.username)
+        }
+    }
+    user.app()
+    let user2 = {
+        username:"ssss",
+        app:function (){
+            setTimeout(function (){
+
+            })
+        }
+    }
+    user2.app()
+
+    let user3= {
+        username:"ssss",
+        app:function (){
+            setTimeout(() =>{
+                console.log(this.username)
+            })
+        }
+    }
+    user3.app()
+</script>
+</body>
+</html>

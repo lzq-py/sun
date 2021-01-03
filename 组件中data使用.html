@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="add">
+    <first></first>
+</div>
+
+<script>
+    let first ={
+        template: `
+        <div>这又是一个组件
+        <h3>这是组件中的data：{{username}}</h3></div>
+    `,
+        data :function (){
+            return {
+                username:"xx"
+            }
+
+        }
+    }
+    Vue.component('first',first)
+    new Vue({
+        el: "#add",
+        data: {},
+    })
+</script>
+</body>
+</html>

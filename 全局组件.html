@@ -7,21 +7,18 @@
 </head>
 <body>
 <div id="add">
-    {{count}}
-    <input type="button" value="修改count值" @click="con(80)">
+    <con></con>
+
 </div>
 
 <script>
+    let con={
+        template:`<div>这是我的第一个div</div>`
+    }
+    Vue.component('con',con)
     new Vue({
         el: "#add",
-        data: {
-            count:40,
-        },
-        methods:{
-            con(t){
-                this.count=ts,
-            }
-        }
+        data: {},
     })
 </script>
 </body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="add">
+    <input type="text" v-model="username">
+    父组件：{{username}}
+    <add :test="username"></add>
+</div>
+
+<script>
+    let add= {
+           template:`<div>这是父组件传递过来的用户名==>{{test}}
+</div>`,
+        props:['test']
+
+        }
+    new Vue({
+        el: "#add",
+        data: {
+            username:"",
+        },
+        components:{
+            add:add
+        }
+    })
+</script>
+</body>
+</html>
